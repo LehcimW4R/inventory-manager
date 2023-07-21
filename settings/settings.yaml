@@ -1,7 +1,7 @@
 port: 8080
 debug: false
 database:
-  host: localhost
+  host: mariadb-mysql #se coloca el nombre del contenedor de la base de datos y no localhost porque la app será conterizada y los contenedores se comunican a través de su nombre de contenedor
   port: 3306
   user: root
   password: mariadb_docker*

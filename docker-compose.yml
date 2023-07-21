@@ -1,0 +1,22 @@
+version: '4.21.1'
+services:
+  goapiecho-im:
+    build: .
+    ports:
+      - "8080:8080"
+    links:
+      - mariadb-mysql
+  mariadb-mysql:
+    image: mariadb
+    ports:
+      - "3306:3306"
+    environment:
+      - MARIADB_ROOT_USERNAME=root
+      - MARIADB_ROOT_PASSWORD=mariadb_docker*
+    volumes:
+      - mariadb-data:/var/lib/mysql
+      # mongo -> /data/db
+      # postgres -> /var/lib/postgresql/data
+
+volumes:
+  mariadb-data:
